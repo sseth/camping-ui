@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/camping/static/js/main.be485bca.js",
+    "static/media/gear-solid.svg": "/camping/static/media/gear-solid.6d3051457e9cb43992ef14710d01e3ea.svg",
+    "static/media/unavailable.svg": "/camping/static/media/unavailable.717f8cf016066a5bddd2532f997618ba.svg",
+    "index.html": "/camping/index.html",
+    "main.be485bca.js.map": "/camping/static/js/main.be485bca.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.be485bca.js"
+  ]
+}
