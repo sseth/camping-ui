@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/camping/static/js/main.714e1132.js",
-    "static/media/gear-solid.svg": "/camping/static/media/gear-solid.6d3051457e9cb43992ef14710d01e3ea.svg",
-    "static/media/unavailable.svg": "/camping/static/media/unavailable.717f8cf016066a5bddd2532f997618ba.svg",
-    "index.html": "/camping/index.html",
-    "main.714e1132.js.map": "/camping/static/js/main.714e1132.js.map"
+    "main.js": "/camping-ui/static/js/main.149d4003.js",
+    "static/media/gear-solid.svg": "/camping-ui/static/media/gear-solid.6d3051457e9cb43992ef14710d01e3ea.svg",
+    "static/media/unavailable.svg": "/camping-ui/static/media/unavailable.717f8cf016066a5bddd2532f997618ba.svg",
+    "index.html": "/camping-ui/index.html",
+    "main.149d4003.js.map": "/camping-ui/static/js/main.149d4003.js.map"
   },
   "entrypoints": [
-    "static/js/main.714e1132.js"
+    "static/js/main.149d4003.js"
   ]
 }
