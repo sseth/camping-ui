@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.js": "/camping-ui/static/js/main.149d4003.js",
+    "main.js": "/camping-ui/static/js/main.c2f2b9c1.js",
+    "static/media/logo.png": "/camping-ui/static/media/logo.dbd986f2797b16214a92.png",
+    "static/media/image-unavailable.jpg": "/camping-ui/static/media/image-unavailable.9661d75de18cc1234cd8.jpg",
     "static/media/gear-solid.svg": "/camping-ui/static/media/gear-solid.6d3051457e9cb43992ef14710d01e3ea.svg",
     "static/media/unavailable.svg": "/camping-ui/static/media/unavailable.717f8cf016066a5bddd2532f997618ba.svg",
     "index.html": "/camping-ui/index.html",
-    "main.149d4003.js.map": "/camping-ui/static/js/main.149d4003.js.map"
+    "main.c2f2b9c1.js.map": "/camping-ui/static/js/main.c2f2b9c1.js.map"
   },
   "entrypoints": [
-    "static/js/main.149d4003.js"
+    "static/js/main.c2f2b9c1.js"
   ]
 }
