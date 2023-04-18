@@ -25,7 +25,7 @@ export default function Login({ authenticate }) {
           password: form.pass,
         },
       });
-      console.log(response.status);
+
       if (response.status === 200) {
         localStorage.setItem('credentials', `${form.user}:${form.pass}`);
         authenticate();

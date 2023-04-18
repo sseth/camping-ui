@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components/macro';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ReactModal from 'react-modal';
 
 import Main from './components/Main';
@@ -7,7 +7,7 @@ import Login from './components/Login';
 import Header from './components/Header';
 
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'http://localhost:5001';
 // axios.defaults.baseURL = 'https://aqueous-temple-20353.herokuapp.com';
 
 ReactModal.setAppElement('#root');
@@ -32,6 +32,7 @@ export default function App() {
     console.log('getting parks');
     const res = await axios('/parks');
     setParks(res.data.parks);
+    // TODO: add fallback
     // }, 5000)
   };
 
@@ -56,21 +57,5 @@ export default function App() {
   );
 }
 
-/*
-  index.css:
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    code {
-      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-    }
- */
-
-// logo color: #4ecca3, font: circular
+// package.json
+// "homepage": "https://sseth.github.io/camping-ui",

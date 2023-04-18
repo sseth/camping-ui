@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
-// import axios from 'axios';
 
-import ModalB from './Modal2';
-import ModalA from './Modal';
 import Park from './Park';
-
-// const Main = styled.main`
-//   max-width: 50%;
-//   min-width: 960px;
-//   margin: 50px auto;
-//   padding-top: 50px;
-//   padding-bottom: 50px;
-//   border: 1px solid rgba(0, 0, 0, 0.2);
-// `;
+import { AddPark, AddDates, ConfirmDelete } from './Modals';
 
 const Main = styled.main`
   width: 100%;
@@ -27,10 +16,11 @@ const Main = styled.main`
 export default function MainComponent(props) {
   const [parks, setParks] = useState([]);
   const [activePark, setActivePark] = useState({});
-  
-  const [isOpenA, setIsOpenA] = useState(false);
-  const [isOpenB, setIsOpenB] = useState(false);
-  
+
+  const [isOpenAdd, setIsOpenAdd] = useState(false);
+  const [isOpenDates, setIsOpenDates] = useState(false);
+  const [isOpenDelete, setIsOpenDelete] = useState(false);
+
   useEffect(() => {
     if (props.data.length) console.log('setting main.parks');
     setParks(
@@ -38,9 +28,13 @@ export default function MainComponent(props) {
         <Park
           key={park._id}
           data={park}
-          openModal={() => {
+          openDatesModal={() => {
             setActivePark(park);
-            setIsOpenA(true);
+            setIsOpenDates(true);
+          }}
+          openDeleteModal={() => {
+            setActivePark(park);
+            setIsOpenDelete(true);
           }}
         />
       ))
@@ -49,15 +43,27 @@ export default function MainComponent(props) {
 
   return (
     <Main>
-      <button onClick={() => setIsOpenB(true)}>add park</button>
-      <ModalA
-        isOpen={isOpenA}
-        setIsOpen={setIsOpenA}
+      <button onClick={() => setIsOpenAdd(true)}>add park</button>
+      <AddPark
+        isOpen={isOpenAdd}
         data={activePark}
         refresh={props.refresh}
+        setIsOpen={setIsOpenAdd}
       />
-      <ModalB isOpen={isOpenB} setIsOpen={setIsOpenB} />
+      <AddDates
+        data={activePark}
+        isOpen={isOpenDates}
+        refresh={props.refresh}
+        setIsOpen={setIsOpenDates}
+      />
+      <ConfirmDelete
+        data={activePark}
+        isOpen={isOpenDelete}
+        refresh={props.refresh}
+        setIsOpen={setIsOpenDelete}
+      />
       {parks.length ? parks : <div>Loading...</div>}
+      {/* TODO: handle case where no parks */}
     </Main>
   );
 }

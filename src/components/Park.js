@@ -1,8 +1,24 @@
 import styled from 'styled-components/macro';
 import React from 'react';
 
-import unavailable from '../images/image-unavailable.jpg';
-import { ReactComponent as Svg } from '../images/unavailable.svg';
+import bg from '../images/image-unavailable.jpg';
+import { ReactComponent as Trash } from '../images/trash-can.svg';
+import { ReactComponent as NotFoundIcon } from '../images/unavailable.svg';
+
+const Delete = styled.button`
+  width: 22px;
+  height: 22px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  & svg:hover {
+    fill: #f55;
+  }
+`;
 
 const Thumbnail = styled.img`
   height: 100%;
@@ -20,7 +36,7 @@ const Unavailable = styled.div`
   justify-content: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(${unavailable});
+  background-image: url(${bg});
 
   & figure {
     fill: #fff;
@@ -46,8 +62,17 @@ const ParkDiv = styled.div`
   display: flex;
   height: 262.5px;
   margin-top: 50px;
+  position: relative;
   /* border: 1px solid rgba(0, 0, 0, 0.2); */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  & .delete {
+    display: none;
+  }
+
+  &:hover .delete {
+    display: block;
+  }
 `;
 
 export default function Park(props) {
@@ -60,15 +85,18 @@ export default function Park(props) {
       ) : (
         <Unavailable>
           <figure aria-label="unavailable">
-            <Svg />
+            <NotFoundIcon />
             <figcaption>Image Unavailable</figcaption>
           </figure>
         </Unavailable>
       )}
       <Content>
         <h3>{name}</h3>
-        <button onClick={props.openModal}>add dates</button>
+        <button onClick={props.openDatesModal}>add dates</button>
       </Content>
+      <Delete className="delete" onClick={props.openDeleteModal}>
+        <Trash />
+      </Delete>
     </ParkDiv>
   );
 }
